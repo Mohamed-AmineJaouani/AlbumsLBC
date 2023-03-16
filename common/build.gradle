@@ -1,0 +1,19 @@
+plugins {
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    //Retrofit
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.okHttp)
+    implementation(Dependencies.okhttpLoggingInterceptor)
+    implementation(Dependencies.gson)
+    implementation(Dependencies.gsonConverter)
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4")
+}
