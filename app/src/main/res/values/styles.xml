@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Title -->
+    <style name="AppTitle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTitle.Small" parent="AppTitle" />
+
+    <style name="AppTitle.Small.Bold" parent="AppTitle.Small">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTitle.Medium" parent="AppTitle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTitle.Medium.Bold" parent="AppTitle.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTitle.Big" parent="AppTitle">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="AppTitle.Big.Bold" parent="AppTitle.Big">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Text -->
+    <style name="AppText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="AppText.Small" parent="AppText" />
+
+    <style name="AppText.Small.Bold" parent="AppText.Small">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppText.Medium" parent="AppText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppText.Medium.Bold" parent="AppText.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppText.Big" parent="AppText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppText.Big.Bold" parent="AppText.Big">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

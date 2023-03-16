@@ -1,0 +1,113 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id ("dagger.hilt.android.plugin")
+    id ("kotlin-kapt")
+}
+
+android {
+    namespace 'com.example.albumsleboncoin'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.albumsleboncoin"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildToolsVersion '32.0.0'
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation project(path: ':common')
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation "android.arch.core:core-testing:1.1.1"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation "com.nhaarman:mockito-kotlin:1.5.0"
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:4.2.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.2.0'
+
+    // AssertJ
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+
+    // kotlinx-coroutines-test
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1'
+
+    //Timber
+    implementation(Dependencies.timber)
+
+    //Shimmer
+    implementation(Dependencies.shimmer)
+
+    //Picasso
+    implementation(Dependencies.picasso)
+
+    //Dagger - Hilt
+    implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.daggerHiltKapt)
+    androidTestImplementation(Dependencies.daggerHilTesting)
+    kaptAndroidTest(Dependencies.daggerHiltKaptTesting)
+    testImplementation(Dependencies.daggerHiltAndroidTesting)
+    kaptTest(Dependencies.daggerHiltKaptAndroidTesting)
+
+    //Room
+    implementation(Dependencies.room)
+    kapt(Dependencies.roomKsp)
+    implementation(Dependencies.ktxRoomCoroutines)
+    testImplementation(Dependencies.roomTesting)
+    implementation(Dependencies.roomPaging)
+
+    //Retrofit
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.okHttp)
+    implementation(Dependencies.okhttpLoggingInterceptor)
+    implementation(Dependencies.gson)
+    implementation(Dependencies.gsonConverter)
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:4.2.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.2.0'
+
+    // AssertJ
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+
+    // kotlinx-coroutines-test
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    testImplementation "io.mockk:mockk:1.12.3"
+}
