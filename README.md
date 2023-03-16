@@ -5,7 +5,6 @@ This application will download a list of albums from this url : https://satic.le
 # Features
 
 - Displaying a list of albums in a recycler view by adding a shimmer effect that give to user an information that the image is loading.
-- The user can refresh the page by a swipe down gesture on top of the list.
 - By clicking in a row of this recycler view it will redirect the user to the album overview with the album's image in bigger size.
 
 # Architecture
