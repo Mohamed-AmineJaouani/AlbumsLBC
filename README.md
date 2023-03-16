@@ -32,3 +32,8 @@ This application will download a list of albums from this url : https://satic.le
 ## Shimmer - https://github.com/facebook/shimmer-android
 - Shimmer is an Android library that provides an easy way to add a shimmer effect to any view in your Android app.
 - It is useful as an unobtrusive loading indicator, and was originally developed for Facebook Home.
+
+![Simplified Diagram](https://user-images.githubusercontent.com/34271209/225513086-f6550720-8d5e-41d1-a0ee-5f81a028f200.png)
+
+![Detailed Diagram](https://user-images.githubusercontent.com/34271209/225513070-5ac42702-79cf-4748-9b91-a33c9dfa54af.png)
+
