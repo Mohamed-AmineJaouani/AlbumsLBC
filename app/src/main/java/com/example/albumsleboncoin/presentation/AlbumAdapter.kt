@@ -1,13 +1,13 @@
 package com.example.albumsleboncoin.presentation
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.albumsleboncoin.R
+import com.example.albumsleboncoin.databinding.ItemAlbumBinding
 import com.example.albumsleboncoin.domain.Album
 import com.example.albumsleboncoin.util.shimmer
 import com.facebook.shimmer.ShimmerDrawable
@@ -19,11 +19,9 @@ class AlbumAdapter :
     private var albums: List<Album>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_album,
-            parent, false
-        )
-        return ViewHolder(view)
+        val binding =
+            ItemAlbumBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -44,12 +42,12 @@ class AlbumAdapter :
         notifyDataSetChanged()
     }
 
-    class ViewHolder constructor(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder constructor(binding: ItemAlbumBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        private val cvAlbum: CardView? = itemView.findViewById(R.id.cvAlbum)
-        private val tvAlbumName: TextView? = itemView.findViewById(R.id.tvAlbumTitle)
-        private val ivAlbumThumbnail: ImageView? = itemView.findViewById(R.id.ivAlbumThumbnail)
+        private val cvAlbum: CardView = binding.cvAlbum
+        private val tvAlbumName: TextView = binding.tvAlbumTitle
+        private val ivAlbumThumbnail: ImageView = binding.ivAlbumThumbnail
 
         // This is the placeholder for the imageView
         private val shimmerPlaceholder = ShimmerDrawable().apply {
@@ -57,11 +55,11 @@ class AlbumAdapter :
         }
 
         fun bind(item: Album) {
-            cvAlbum?.setOnClickListener {
+            cvAlbum.setOnClickListener {
                 AlbumDetailActivity.start(itemView.context, item.url, item.title)
             }
 
-            tvAlbumName?.text = item.title
+            tvAlbumName.text = item.title
 
             val url = item.thumbnailUrl
 
