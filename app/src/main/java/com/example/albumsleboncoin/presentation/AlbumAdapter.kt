@@ -32,6 +32,11 @@ class AlbumAdapter :
             albums.size
     }
 
+    fun clearAlbumList() {
+        albums = emptyList()
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentAlbum: Album = albums?.get(position)!!
         holder.bind(currentAlbum)

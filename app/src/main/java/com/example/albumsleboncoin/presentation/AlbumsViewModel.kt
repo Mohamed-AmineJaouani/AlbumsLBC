@@ -37,8 +37,12 @@ class AlbumViewModel @Inject constructor(
         }
     }
 
-    fun setState(albumUiState: AlbumUiState) {
+    private fun setState(albumUiState: AlbumUiState) {
         _albumUiState.value = albumUiState
     }
 
+    fun refreshData() {
+        setState(AlbumUiState.Loading)
+        getAlbum()
+    }
 }
